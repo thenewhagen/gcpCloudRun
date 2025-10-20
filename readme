@@ -1,3 +1,7 @@
+0.build docker image
+docker build -t myimagename:latest .
+
+
 1. Prerequisites
 Make sure you have these installed:
 Google Cloud SDK (gcloud) → Install here
