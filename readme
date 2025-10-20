@@ -1,5 +1,6 @@
 0.build docker image
 docker build -t myimagename:latest .
+docker run -d --name hello-universe-app -p 8080:8081 hello-universe-app:latest
 
 1. Prerequisites
 Make sure you have these installed:
