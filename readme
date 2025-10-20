@@ -1,1 +1,22 @@
-test
+1. Prerequisites
+Make sure you have these installed:
+Google Cloud SDK (gcloud) → Install here
+Docker (you already have)
+
+gcloud auth login
+gcloud auth configure-docker
+
+gcloud config set project YOUR_PROJECT_ID
+
+2. Tag Your Local Docker Image
+docker tag my-app gcr.io/YOUR_PROJECT_ID/my-app
+
+3. Push to Google Container Registry (GCR)
+docker push gcr.io/YOUR_PROJECT_ID/my-app
+
+4. Deploy to Cloud Run
+gcloud run deploy my-app --image gcr.io/YOUR_PROJECT_ID/my-app --platform managed --region europe-west1 --allow-unauthenticated
+
+5. Check Deployment
+Once done, you’ll see a URL like:
+Service [my-app] revision [my-app-00001] has been deployed and is serving 100 percent of traffic at https://my-app-xxxxx.a.run.app
